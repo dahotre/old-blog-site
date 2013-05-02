@@ -1,0 +1,10 @@
+<div id="citations">
+	<% if !citations.nil? && citations.size > 0 %>
+	<ul>
+		References:
+		<% for citation in citations %>
+		<li><%= link_to citation.citation_title, citation.link , :target => "_blank" %></li>
+		<% end %>
+	</ul>
+	<% end %>
+</div>

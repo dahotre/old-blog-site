@@ -1,0 +1,25 @@
+<div id="main">
+<%= form_for @artist do |f| %>
+<div id="createArtist">
+	<p><%= f.label :name %><%= f.text_field :name %></p>
+	<p><%= f.label :url %><%= f.text_field :url %></p>
+	<p><%= f.label :bio %><%= f.text_area :bio %></p>
+	<p><%= f.label :email %><%= f.text_field :email %></p>
+	<p><%= f.label :exhibit %><%= f.text_area :exhibit %></p>
+	<p><%= f.label :art %><%= f.text_field :art %></p>
+	<p><%= f.label :fb_url %><%= f.text_field :fb_url %></p>
+</div>
+
+<div id="createSong">
+	Song Data:
+	<%= f.fields_for :song do |b| %><br />
+	<%= b.label :name %><%= b.text_field :name %><br />
+	<%= b.label :vendor %><%= b.text_field :vendor %><br />
+	<%= b.label :affiliate_code %><%= b.text_area :affiliate_code %><br />
+	<%= b.label :affiliate_code_expanded %><%= b.text_area :affiliate_code_expanded %><br />
+	<% end %>
+</div>
+
+<p><%= submit_tag "Submit" %></p>
+<% end %>
+</div>

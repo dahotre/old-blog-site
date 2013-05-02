@@ -1,0 +1,14 @@
+<div id="artistView"><%= render :partial => '/layouts/artist_month' %></div>
+
+<div id="contentWrapper" class="homeRichContent">
+	<% index = 0 %>
+	<% for artist in @artists %>
+		<%= render :partial => '/layouts/each_artist', :locals => {:artist => artist} if artist.art == "music"%>
+		<br />
+		<% index += 1 %>
+		<% if index == 3 %>
+			<%= render :partial => '/layouts/artistsAd' %>
+			<br />
+		<% end %>
+	<% end %>
+</div>

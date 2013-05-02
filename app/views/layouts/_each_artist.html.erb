@@ -1,0 +1,52 @@
+<div class="AOMOther AOMWrapperAll">
+	<table>
+		<tr>
+			<td width="150px">
+				<span id="artistName" class="AOMHeading">
+					<%= link_to "#{artist.name}", "/artists/#{artist.id}", :id => "artistNameText" %>
+				</span>
+			</td>
+			<td>
+				<% fbUrl = nil %>
+				<% if artist.fb_url.blank? %>
+					<% fbUrl = "http://www.dahotre.com/artists/" + artist.id.to_s %>
+				<% else %>
+					<% fbUrl = artist.fb_url %>
+				<% end %>
+				<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => fbUrl, :size => "medium"} %>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">
+				<% if artist.art == "music" && !artist.song.nil? %>
+				<div class="featured">
+							<%= raw artist.song.affiliate_code_expanded %>
+					</div>
+				<% end %>
+			</td>
+			<td><a href="<%= artist.url %>" target="_blank"><%= artist.url %></a></td>
+		</tr>
+		<tr>
+			<!-- td -->
+			<td>
+				<div id="AOMDisplay">
+					<% if display == "show" %>
+						<%= raw artist.exhibit.gsub(/width=\"[0-9][0-9][0-9]/, "width=\"325").gsub(/height=\"[0-9][0-9][0-9]/, "height=\"185") %>
+					<% else %>
+					<%= raw artist.exhibit %>
+					<% end %>
+				</div>
+				<div id="AOMBuy">
+					<!-- AMZ &nbsp; ITUNES -->
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!-- td -->
+			<td>	
+				<div id="AOMIMO">
+					<%= raw artist.bio %>
+				</div>
+			</td>
+		</table>
+	</div>

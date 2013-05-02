@@ -1,0 +1,27 @@
+<div id="main">
+<%= form_for @node do |f| %>
+<p><%= f.label :title %><%= f.text_field :title %></p>
+<p><%= f.label :url_title %><%= f.text_field :url_title %></p>
+<p><%= f.label :html %><%= f.text_area :html%></p>
+<p><%= f.label :author %><%= f.text_field :author %></p>
+<span id="currentTags" class="tag">
+<p><%= f.label :tag_tokens %><%= f.text_field :tag_tokens %></p>
+</span>
+
+<div id="createCitations">
+	<%= f.fields_for :citations do |builder| %>
+		<%= render "/layouts/citations_fields", :f => builder  %>
+	<% end %>
+	<p>
+		<%= link_to_add_fields "Add Citation", f, :citations %>
+	</p>
+</div>
+
+<p><%= f.radio_button(:draft, "true") %>
+<%= f.label(:draft_true, "Draft") %>
+<%= f.radio_button(:draft, "false") %>
+<%= f.label(:draft_false, "Publish") %></p>
+
+<p><%= submit_tag "Submit" %></p>
+<% end %>
+</div>

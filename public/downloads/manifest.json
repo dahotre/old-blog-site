@@ -1,0 +1,13 @@
+{
+  "name": "O.co deals",
+  "version": "0.1",
+  "description": "Deals at O.co",
+  "icons": { "128": "icon_128.png" },
+  "background_page": "background.html",
+  "permissions": [ "cookies", "http://www.dahotre.com/"],
+  "browser_action": {
+    "default_title": "O.co deals",
+    "default_icon": "icon_19.png",
+    "default_popup": "popup.html"
+  }
+}

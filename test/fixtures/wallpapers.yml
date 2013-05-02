@@ -1,0 +1,38 @@
+# == Schema Information
+# Schema version: 20111002102040
+#
+# Table name: wallpapers
+#
+#  id                   :integer         not null, primary key
+#  url                  :string(255)
+#  artist_id            :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#  width                :integer
+#  height               :integer
+#  fromDate             :date
+#  toDate               :date
+#  copyright_image_url  :string(255)
+#  copyright_source_url :string(255)
+#  story                :string(255)
+#
+
+current_1:
+    fromDate: <%= 1.days_ago %>
+    toDate: <%= 7.days.from_now %>
+    url: "current_1.jpg"
+
+old:
+    fromDate: <%= 14.days_ago %>
+    toDate: <%= 7.days.ago %>
+    url: "old.jpg"
+
+future:
+    fromDate: <%= 8.days_from_now %>
+    toDate: <%=14.days.from_now %>
+    url: "future.jpg"    
+
+current_2:
+    fromDate: <%= 1.days_ago %>
+    toDate: <%= 6.days.from_now %>
+    url: "current_2.jpg"

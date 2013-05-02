@@ -1,0 +1,114 @@
+a {
+	color: white;
+}
+#imageCopyright {
+	border-top: 2px solid #EEEEEE;
+	text-align: center;
+}
+#imageStory {
+	font-size: 0.8em;
+	position: relative;
+	top: 90%;
+	width: 70%;
+	left: 220px;
+	height: 5em;
+	/*	border: 2px solid #EEEEEE;*/
+	padding: 5px;
+	margin-left: 1em;
+	border-radius: 0.3em;
+	background: rgba(128, 128, 128, 0.3);
+	color: white;
+	clear: both;
+}
+#imageStory>.details {
+	float: left;
+	width: 88%;
+}
+#homeShare {
+	float: left;
+	width: 10%;
+}
+#copyrightImage {
+	margin-left:10px;
+}
+
+.bubble {
+	position: absolute;
+	height: 7em;
+	width: 14em;
+	-moz-border-radius:    .4em;
+	-webkit-border-radius: .4em;
+	border-radius:         .4em;
+	z-index: 2;
+	border: 1px solid white;
+	margin: 1em;
+	padding: 0.5em;
+	background: rgba(128, 128, 128, 0.3);
+	color: white;
+}
+#programmings {
+	left: 0%;
+}
+#ramblings {
+	left: 65%;
+	top: 30%
+}
+#projects {
+	left: 30%;
+	top: 50%;
+}
+.bubbleTitle {
+	text-align: right;
+	margin-bottom: 0.8em;
+}
+.bubbleTitle>a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+.bubbleTitle>a:hover {
+	text-decoration: underline;
+	color: black;
+}
+.bubbleList>ul {
+	list-style-type: none;
+	font-size: 0.75em;
+	padding-left: 0.8em;
+}
+.hidingLis {
+	padding-bottom: 0.3em;
+	-moz-border-radius:    .2em;
+	-webkit-border-radius: .2em;
+	border-radius:         .2em;
+	z-index: 2;
+}
+.hidingLis>li>a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.truncatedLi {
+	display: block;
+}
+.truncatedLi>a {
+	color: white;
+}
+.fullLi {
+	display: none;
+	text-decoration: underline;
+}
+.fullLi>a {
+	color: black;
+}
+#artistHide {
+	display: none;
+}
+#artistControl {
+	display: block;
+	text-align: center;
+	width: 100%;
+	text-decoration: underline;
+	font-size: 0.8em;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: black;
+	cursor: pointer;
+}

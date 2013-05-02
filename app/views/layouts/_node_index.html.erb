@@ -1,0 +1,51 @@
+<!-- <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&v2', :media => 'screen' %> -->
+<div id="nodeSectionMain" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<% if admin? %>
+	<div id="adminCreate">
+		<%= link_to "Compose new entry..", "/#{type}/new"%>
+	</div>
+	<% end %>
+
+	<% node_path = (type == "ramblings") ? ramblings_path : programmings_path %>
+
+	<% counter = 1 %>
+	<% for node in nodes %>
+	<div class="sticky <%= counter.even? ? "stickyEven" : "stickyOdd" %>">
+		<div class="stickyTop"></div>
+		<div class="stickyContent" about="<%= link_to_node_index(node) %>">
+			<span class="shareWrapperNodeIndex">
+				<!-- AddThis Button BEGIN -->
+				<!--	<% shareUrl = getCurrentUrl(node) %>
+				<div class="addthis_toolbox addthis_default_style ">
+				<a class="addthis_button_preferred_1" addthis:url="<%= shareUrl %>"></a>
+				<a class="addthis_button_compact" addthis:url="<%= shareUrl %>"></a>
+				</div>
+				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e6c0539763e88fa"></script> -->
+				<!-- AddThis Button END -->
+			</span>
+			<h2 class="readFull" property="dc:title"><%= link_to node.title, link_to_node_index(node) %></h2>
+
+			<div class="currentTags tag smallTags" property="dc:subject">
+				<% for tag in node.tags %>
+				<%= link_to tag.name, "/tags/#{tag.name}"%>
+				<% end %>
+			</div>
+			<section class="summary">
+				<table>
+					<tr>
+						<td>
+							<%= truncate(strip_tags(node.html), :length => 200) %>
+						</td>
+						<% imgTag = extractImage(node.html) %>
+						<%= raw "<td>" + (link_to raw(imgTag), link_to_node_index(node)) + "</td>"  unless imgTag.nil?	%>
+					</tr>
+				</table>
+			</section>
+		</div>
+		<span class="readFull"><%= link_to "Check it out..", link_to_node_index(node) %></span>
+	</div>
+	<% counter = counter + 1 %>
+	<% end %>
+</div>
+
+<%= render :partial => '/layouts/node_index_right_col' %>

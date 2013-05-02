@@ -1,0 +1,34 @@
+<% content_for :resources do %>
+<%= stylesheet_link_tag 'wallpapers', :media => 'screen'  %>
+<meta property="og:image" content="<%= root_url %>images/<%= @wallpapers.first.url %>"/>
+<% end %>
+
+<div id="galleryTable">
+<ol id="gallery">
+	<li id="wallpaperSection">
+				<% for wp in @wallpapers %>
+				<div class="wallpaperContainer">
+					<%= link_to image_tag("150_" + wp.url, :class => "wallpaper "), link_to_wallpaper_index(wp) %>
+					<div class="caption">
+						<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => getCurrentUrl(wp), :size => "medium"}%>
+					</div>
+				</div>
+				<% end %>
+	</li>
+	
+	<li id="artistSection">
+		<div id="contentWrapper" class="homeRichContent">
+		<% index = 0 %>
+			<% for artist in @artists %>
+				<%= render :partial => '/layouts/each_artist', :locals => {:artist => artist} %>
+				<br />
+				<% index += 1 %>
+				<% if index == 3 %>
+					<%= render :partial => '/layouts/artistsAd' %>
+					<br />
+				<% end %>
+			<% end %>
+		</div>
+	</li>
+</ol>
+</div>

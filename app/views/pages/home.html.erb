@@ -1,0 +1,53 @@
+<% content_for :resources do %>
+<%= stylesheet_link_tag 'home', :media => 'screen'  %>
+<%= javascript_include_tag "home.js"%>
+<!-- Supersize START -->
+<%= javascript_include_tag "supersized.core.3.2.1.min.js"%>
+<%= stylesheet_link_tag 'supersized.core', :media => 'screen'  %>
+
+<script type="text/javascript">
+
+jQuery(function($){
+
+	$.supersized({
+		slides  :  	[ {image : '/images/<%= @wallpaper.url %>'} ]
+	});
+});
+
+</script>
+<!-- Supersize END -->
+
+<meta property="og:image" content="<%= root_url %>images/<%= @wallpaper.url %>"/>
+
+<% end %>
+<%
+imageStoryWidth = 130
+if !@wallpaper.story.blank?
+	imageStoryWidth = @wallpaper.width * 2/3
+end
+storyDetailsWidth = imageStoryWidth - 130
+%>
+<%= render :partial => '/layouts/artist_month' %>
+
+<div id="contentWrapper" style="height: 500px;
+width: 70%;"
+class="homeRichContent">
+
+<%= render :partial => 'bubble', :locals => {:section_type => "programmings", :nodes => @topProgrammings }%>
+<%= render :partial => 'bubble', :locals => {:section_type => "ramblings", :nodes => @topRamblings }%>
+<!-- <%= render :partial => 'bubble', :locals => {:section_type => "projects", :nodes => @topProjects}%> -->
+
+</div>
+<div id="imageStory">
+	<div id="homeShare">
+		<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => getCurrentUrl(@wallpaper), :size => "medium"}%>
+		<div class="gplus"><g:plusone size="medium" href="<%= getCurrentUrl(@wallpaper) %>" ></g:plusone></div>
+	</div>
+	<div class="details">
+		<%= raw @wallpaper.story %>
+		<% if !@wallpaper.artist.nil? %>
+		<br /><span id="imageCopyright">Image by <strong><%= link_to @wallpaper.artist.name, @wallpaper.artist.url ,:target => "_blank" %></strong> </span>
+		<% end %>
+		<%= link_to image_tag("#{@wallpaper.copyright_image_url}", :id=>"copyrightImage"), "#{@wallpaper.copyright_source_url}"  ,:target => "_blank", :rel => "license"%>
+	</div>
+</div>

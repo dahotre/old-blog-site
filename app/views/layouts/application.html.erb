@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:og="http://ogp.me/ns#"
+xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+	<%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Snippet&v2', :media => 'screen' %>
+	<%= render :partial => 'layouts/head', :locals => { :type => "website"}  %>
+</head>
+<body>
+	<div id="divBody">
+		<%= render :partial => 'layouts/nav', :locals => {:cell => @cell}%>
+
+		<%= render :partial => 'layouts/flash' %>
+		<div id="main">
+
+			<%= yield %>
+		</div>
+	</div>
+
+	<%= render :partial => 'layouts/bottom_message' %>
+
+	<input type="hidden" name="OBKey" value="e8CL4kEKvwtxa+gXGgQ7dg=="/> <script LANGUAGE="JavaScript">var OBCTm='1316911940265'; </script><script LANGUAGE="JavaScript" src="http://widgets.outbrain.com/claim.js"></script>
+</body>
+</html>

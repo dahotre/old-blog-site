@@ -1,0 +1,61 @@
+<% content_for :metaTags do %>
+<meta name="description" content="<%= truncate(strip_tags(@node.html), :length => 230) %>" />
+<% tagsString = ""
+for t in @node.tags do
+	tagsString += t.name + ", "
+end
+ %>
+<meta name="keywords" content="<%= tagsString %>" />
+<% end %>
+
+<% if @node.draft %>
+<%= render :partial => 'layouts/draft_page' %>
+<% end %>
+
+<div id="nodeContent" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<div id="nodeTitle">
+		<h1 property="dc:title" class="instapaper_title"><%= @node.title %>
+			<%= "[*incomplete]" if @node.draft %></h1>
+	</div>
+	<div id="meta-header">
+	<%= render :partial => 'layouts/share_buttons', :locals => {:size => "medium", :url => getCurrentUrl(@node)} %>
+		<div class="currentTags tag" property="dc:subject">
+			<% for tag in @node.tags %>
+			<%= link_to tag.name, "/tags/#{tag.name}"%>
+			<% end %>
+		</div>
+	</div>
+	<div id="nodeHtml" class="instapaper_body">
+		<%= raw @node.html %>
+	</div>
+	<div id="meta-footer">
+		<div class="currentTags tag" property="dc:subject">
+			<% for tag in @node.tags %>
+			<%= link_to tag.name, "/tags/#{tag.name}"%>
+			<% end %>
+		</div>
+		<br />
+		<div id="meta-info">
+			Author: <strong property="dc:creator"><%= @node.author %></strong> 
+			<br />
+			Viewed <strong><%= @node.views %></strong> times
+			<br />
+			<span id="lastEdited">
+				Created : <span property="dc:date"><%= @node.created_at.to_date %></span>
+			</span>
+		</div>
+
+		<%= render :partial => 'layouts/share_buttons', :locals => {:size => "tall", :url=> getCurrentUrl(@node)} %>
+
+
+	</div>
+
+	<%= render :partial => 'layouts/citation_list' , :locals => {:citations => @node.citations}%>
+	<%= render :partial => 'layouts/nodeAdsHorizontal' %>
+	<%= render :partial => 'layouts/outbrain_recs' , :locals => {:url => getCurrentUrl(@node)} %>
+
+	<%= render :partial => 'layouts/disqus', :locals => {:identifier => "#{@node.id}-#{@node.url_title}"} %>
+
+</div>
+
+<%= render :partial => 'layouts/node_view_right_col' %>

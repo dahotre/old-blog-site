@@ -1,0 +1,13 @@
+<div id="main">
+<%= form_for @wallpaper do |f| %>
+<div id="createWallpaper">
+	<p><%= f.label :artist_id %><%= f.text_field :artist_id %></p>
+	<p><%= f.label :url %><%= f.text_field :url %></p>
+	<p><%= f.label :story %><%= f.text_area :story %></p>
+	<p><%= f.label :width %><%= f.text_field :width %></p>
+	<p><%= f.label :height %><%= f.text_field :height %></p>
+</div>
+
+<p><%= submit_tag "Submit" %></p>
+<% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="shareWrapper" id="share_<%= size %>">
+
+<% if size == 'medium' %>
+  <%= render :partial => 'layouts/instapaper', :locals => {:url => url}%>
+<% end %>
+
+	<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => url, :size => size}%>
+
+	<div class="gplus"><g:plusone size="<%= size %>" href="<%= url %>" ></g:plusone></div>
+
+	<div class="tweet">
+		<a href="http://twitter.com/share" class="twitter-share-button" data-count="<%= tweet_layout(size) %>">Tweet</a>
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	</div>
+	
+	<%= render :partial => 'layouts/addthis', :locals => {:url => url, :size => size} %>
+
+</div>

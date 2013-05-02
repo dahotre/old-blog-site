@@ -1,0 +1,86 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>	
+	$.getJSON("feed.json",
+	function(data) {
+		$.each(data, function(key, val){
+			if (key=='dodImage') {
+				$("#dodImage").attr("src", val);
+			}
+			else if(key=="dodProductName") {
+				$("#dodProductName").html(val);
+			}
+			else if(key=="dodSave") {
+				$("#dodSave").html(val);
+			}
+			else if (key=='buzzImage') {
+				$("#buzzImage").attr("src", val);
+			}
+			else if(key=="buzzProductName") {
+				$("#buzzProductName").html(val);
+			}
+			else if(key=="buzzSave") {
+				$("#buzzSave").html(val);
+			}
+		});
+	});
+	
+	chrome.browserAction.setBadgeText({text:String('')});
+	</script>
+	<style>
+	#body {
+		width: 400px;
+		font-family: 'Lucida Grande', 'Segoe UI', 'Helvetica', 'Arial';
+	}
+	.thumbnail {
+		width: 100px;
+	}
+	.productName {
+		font-size: 0.8em;
+	}
+	a {
+		color: #3080C8;
+	}
+	#head {
+		background-color: #c7202c;
+		color: white;
+		padding: 5px;
+	}
+	</style>
+</head>
+<body>
+	<div id="body">
+		<div id="head">
+			Overstock.com Deals
+		</div>
+		<table id="main">
+				<tr>
+					<td rowspan="2">
+						<a href="http://www.overstock.com/deal-of-the-day" target="_blank"><img id="dodImage" class="thumbnail"/></a>
+					</td>
+					<td>
+						<a href="http://www.overstock.com/deal-of-the-day" target="_blank"><span id="dodProductName" class="productName"></span></a>
+					</td>
+				</tr>
+				<tr><td>
+					Save : <span id="dodSave" class="save"></span>
+				</td></tr>
+				<!-- Next -->
+				<tr>
+					<td rowspan="2">
+						<a href="http://www.overstock.com/buzz-buy" target="_blank"><img id="buzzImage" class="thumbnail"/></a>
+					</td>
+					<td>
+						<a href="http://www.overstock.com/buzz-buy" target="_blank"><span id="buzzProductName" class="productName"></span></a>
+					</td>
+				</tr>
+				<tr><td>
+					Extra Rewards: <span id="buzzSave" class="save"></span>
+				</td></tr>
+			</table>
+		</div>
+		<span id="last"></span>
+
+	</body>
+	</html>

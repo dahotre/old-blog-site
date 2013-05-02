@@ -1,0 +1,33 @@
+<div id="headerWrap">
+	<div id="headerNav">
+		<div class="searchs headerCellFixedWidth"><%= render :partial => 'layouts/google_search' %></div>
+		<div class="contact headerCellFixedWidth"><%= link_to "Contact", contact_path %></div>
+		<div class="wallpapers headerCellFixedWidth"><%= link_to "Gallery", wallpapers_path %></div>
+		<!-- <div class="projects headerCellFixedWidth"><%= section_link_helper ("projects")%></div> -->
+		<div class="ramblings headerCellFixedWidth"><%= section_link_helper ("ramblings")%></div>
+		<div class="programmings headerCellFixedWidth"><%= section_link_helper ("programmings")%></div>
+		<div class="home headerCellFixedWidth"><%= link_to "Home", home_path %></div>
+	</div>
+	<div id="headerPointerBottom" class="headerPointer">
+		<div class="searchs headerCellFixedWidth"></div>
+		<div class="contact headerCellFixedWidth"></div>
+		<div class="wallpapers headerCellFixedWidth"></div>
+		<!-- <div class="projects headerCellFixedWidth"></div> -->
+		<div class="ramblings headerCellFixedWidth"></div>
+		<div class="programmings headerCellFixedWidth"></div>
+		<div class="home headerCellFixedWidth"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+setPointer("<%= cell %>");
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=169357893132846";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>

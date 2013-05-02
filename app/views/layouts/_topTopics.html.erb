@@ -1,0 +1,10 @@
+<div id="topTopics">
+	<h3 class="widgetHeader">Top Articles</h3>
+	<ul id="topTopicsUL">
+		<% counter = 1 %>
+		<% for n in @trendingNodes.first(5) %>
+		<li class="<%= counter.even? ? "topicEven" : "topicOdd" %>"> <%= link_to(n.title, link_to_node_index(n)) %> </li>
+		<% counter = counter + 1 %>
+		<% end %>
+	</ul>	
+</div>

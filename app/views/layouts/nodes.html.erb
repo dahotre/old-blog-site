@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+	<%= yield :metaTags %>
+	<%= stylesheet_link_tag 'node', :media => 'screen'  %>
+	<%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Snippet&v2', :media => 'screen' %>
+	<!-- Prettify stuff START -->
+	<%= javascript_include_tag "prettify.js" %>
+	<%= stylesheet_link_tag "prettify.css" %>
+	<!-- prettify stuff END -->
+	<%= render :partial => 'layouts/head', :locals => { :type => "article" } %>
+</head>
+<body onload="prettyPrint()">
+	<div id="divBody">
+		<%= render :partial => 'layouts/nav', :locals => {:cell => @cell}%>
+		
+		<%= render :partial => 'layouts/flash' %>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
+	
+	<%= render :partial => 'layouts/bottom_message' %>
+	<%= render :partial => '/layouts/peep' if !@rec_node.nil? %>
+</body>
+</html>

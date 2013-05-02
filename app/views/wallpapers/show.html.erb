@@ -1,0 +1,68 @@
+<% content_for :resources do %>
+	<meta property="og:image" content="<%= root_url %>images/150_<%= @wallpaper.url %>"/>
+	
+	<%= stylesheet_link_tag 'wallpapers', :media => 'screen'  %>
+	<!-- Supersize START -->
+	<script src="/javascripts/supersized.core.3.2.1.min.js?1311709336" type="text/javascript"></script>
+	<link href="/stylesheets/supersized.core.css?1318830815" media="screen" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+
+	jQuery(function($){
+
+		$.supersized({
+			slides  :  	[ {image : '/images/<%= @wallpaper.url %>'} ]
+		});
+	});
+
+	</script>
+	<!-- Supersize END -->
+
+<% end %>
+<% unless @wallpaper.story.nil? %>
+	<span id="showWallpaperStory">+</span>
+	<div id="wallpaperStory"><%= raw @wallpaper.story %></div>
+<% end %>
+
+<%= link_to "<", @prev , :id => "prevWallpaper", :class => "arrows" %>
+<%= link_to ">", @next , :id => "nextWallpaper", :class => "arrows" %>
+
+<div id="fbCommentsDiv">
+	<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => getCurrentUrl(@wallpaper), :size => "medium"}%>
+	<div id="displayComments">Comment</div>
+	<div id="fb-comments-wrapper"><div class="fb-comments" data-href="<%= getCurrentUrl(@wallpaper) %>" data-num-posts="2" data-width="400"></div></div>
+</div>
+
+<script>
+jQuery(function($){
+	$("#displayComments").click(function() {
+		$("#fb-comments-wrapper").show();
+		$(this).hide();
+	});
+
+	function checkKey(e){
+		switch (e.keyCode) {
+			case 37:
+			$(location).attr('href','/wallpapers/<%=@prev.id%>');
+			break;
+			case 39:
+			$(location).attr('href', '/wallpapers/<%=@next.id%>');
+			break; 
+		}      
+	}
+
+	if ($.browser.mozilla) {
+		$(document).keypress (checkKey);
+	} else {
+		$(document).keydown (checkKey);
+	}
+	
+	$("#wallpaperStory").hide();
+	$("#showWallpaperStory").click(function() {
+		$(this).hide();
+		$("#wallpaperStory").toggle();
+	});
+
+});
+
+</script>

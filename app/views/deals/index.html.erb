@@ -1,0 +1,65 @@
+<% content_for :resources do %>
+<meta name="description" content="Get a Google Chrome extension for viewing daily deals on Overstock.com (O.co)" />
+<meta name="keywords" content="overstock.com, o.co, deals, daily deals, extension, google, chrome, apps, browser" />
+<% end %>
+<div id="extnPage">
+<h1>
+	Chrome extension for Overstock.com deals
+</h1>
+<div id="download">
+	Download here
+</div>
+<br /><br />
+<%= render :partial => 'layouts/share_buttons', :locals => {:size => "medium", :url=> "#{request.url}"} %>
+<br /><br />
+<p id="aboutExtension">
+	Don't miss out on awesome daily deals offered by Overstock.com. Install this extension by clicking on <a href="http://www.dahotre.com/downloads/OverstockDeals.crx">Download here</a> link, using Google Chrome browser. It will prompt you to "Continue" installation. <br /><img src="/images/extn/continue.png" alt="Continue" class="fb" /><br />
+	Then Chrome will display its warning message. Please be rest assured that this extension does not access any data from your browser. It only stores a cookie on your browser that contains the last date you accessed this extension so that it can get you the latest deal. This information is stored ONLY on your browser and is NOT transferred to my website or shared with anyone else. <br /><img src="/images/extn/warning.png" alt="Warning" class="fb" /><br />
+	And now you are ready to go.  <br /><img src="/images/extn/installed.png" alt="Warning" class="fb" /><br />
+	To access the latest deals, simply click on the red icon besides the address bar on your Chrome browser.  <br /><img src="/images/extn/popup.png" alt="Warning" class="fb" /><br />
+</p>
+<%= render :partial => 'layouts/share_buttons', :locals => {:size => "tall", :url=> "#{request.url}"} %>
+<%= render :partial => 'layouts/disqus', :locals => {:identifier => "deals"} %>
+</div>
+<style>
+#extnPage {
+	font-family: 'Maven Pro';
+	margin: 0 auto;
+	width: 640px;
+}
+.fb {
+	margin: 20px;
+	-moz-box-shadow: 0 0 15px #555;
+	-webkit-box-shadow: 0 0 15px #555;
+	box-shadow: 0 0 15px #555;
+}
+#extnMessage {
+	display: none;
+}
+#download {
+	background-color: tomato;
+	color: #F6F6E8;
+	width: 200px;
+	border: black;
+	border-radius: 3px;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid #F6F6E8;
+	cursor: pointer;
+}
+#download:hover {
+	background-color: #F6F6E8;
+	color: tomato;
+	border: 1px solid tomato;
+}
+</style>
+<script>
+//For adding facebox to blogImage images
+$(".fb").wrap(function() {
+	return '<a href="' + $(this).attr('src') + '" class="facebox" rel="facebox nofollow" />';
+});
+$("#download").click(function() {
+	window.location.href = "http://www.dahotre.com/downloads/OverstockDeals.crx";
+});
+</script>

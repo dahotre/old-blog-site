@@ -1,0 +1,17 @@
+<div id="peepWrap">
+	<table>
+		<thead>
+			<tr>
+				<td class="peepLeft" id="peepTitle">Read Next:</td>
+				<td class="peepRight"><div id="peepClose">X</div></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="peepLeft"><%= link_to @rec_node.title, @rec_node, :id => "peepLink" %><br />
+					<%= strip_tags truncate(@rec_node.html, :length => 100) %></td>
+				<td class="peepRight" id="peepImage"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,6 @@
+<h3 class="widgetHeader">Tags</h3>
+<% min_weight = @tag_heat.values.min %>
+<% max_weight = @tag_heat.values.max %>
+<% @tag_heat.each do |tag, weight| %>
+	<%= link_to "#{tag.name}", "/tags/#{URI::encode(tag.name)}", :class => tag_css_class(weight, min_weight, max_weight) %>
+<% end %>

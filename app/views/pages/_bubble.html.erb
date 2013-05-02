@@ -1,0 +1,13 @@
+<div id="<%= section_type %>" class="bubble">
+	<div class="bubbleTitle"><%= section_link_helper (section_type)%></div>
+	<div class="bubbleList">
+		<ul>
+			<% for node in nodes %>
+			<div class="hidingLis">
+				<li class="truncatedLi"><%= link_to truncate(node.title, :length => 30), link_to_node_index(node)%></li>
+				<li class="fullLi"><%= link_to node.title, link_to_node_index(node)%></li>
+			</div>
+			<% end %>
+		</ul>
+	</div>
+</div>

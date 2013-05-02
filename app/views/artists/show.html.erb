@@ -1,0 +1,5 @@
+<div id="artistView"><%= render :partial => '/layouts/artist_month' %></div>
+
+<div id="contentWrapper" class="homeRichContent">
+	<%= render :partial => '/layouts/each_artist', :locals => {:artist => @artist, :display => "show" } %>
+</div>

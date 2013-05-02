@@ -1,0 +1,14 @@
+<% if !@user.blank? %>
+<%= @user.id%>
+<table>
+<% for t in @user.transactions %>
+<tr>
+	<td><%= t.programming.url_title if !t.programming.blank? %></td>
+	<td><%= t.rambling.url_title if !t.rambling.blank? %></td>
+	<td><%= t.remote_ip %></td>
+	<td><%= t.created_at %></td>
+	<td><%= t.user_agent %></td>
+</tr>
+<% end %>
+</table>
+<% end %>

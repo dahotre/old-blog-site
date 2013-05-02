@@ -1,0 +1,47 @@
+<% artist = Artist.last(:conditions => ["art = 'music'"]) %>
+<div id="AOMWrapper" class="homeRichContent AOMHome">
+	<div id="AOMTitle">
+		<h2>Artist of the month&nbsp;&nbsp;
+		</h2>
+	</div>
+	
+	<div id="AOMSeparator"></div>
+	<div id="artistName" class="AOMHeading">
+		<%= link_to "#{artist.name}", "/artists/#{artist.id}", :id => "artistNameText" %><br />
+		<%= link_to "See All Artists", {:controller => "artists"}, :id => "allArtists" %><br />
+	</div>
+
+	<% if artist.art == "music" && !artist.song.nil? && !artist.song.affiliate_code.blank? %>
+	<div id="featured">
+		Buy from <%= artist.song.vendor %> : <span id="buyLink">
+			<%= raw artist.song.affiliate_code %>
+		</span>
+	</div>
+	<% end %>
+	
+	
+	<div id="artistControl">
+	<img src="/images/equalizer.gif" />
+		Show More..
+	</div>
+	
+	<div id="artistHide">
+	<div id="AOMDisplay">
+		<%= raw artist.exhibit %>
+	</div>
+
+		<% fbUrl = nil %>
+		<% if artist.fb_url.blank? %>
+		<% fbUrl = "http://www.dahotre.com/artists/" + artist.id.to_s %>
+		<% else %>
+		<% fbUrl = artist.fb_url %>
+		<% end %>
+		<%= render :partial => 'layouts/fb_like', :locals => {:fb_url => fbUrl, :size => "medium"} %>
+		<div id="AOMBuy">
+			<!-- AMZ &nbsp; ITUNES -->
+		</div>	
+		<div id="AOMIMO">
+			<%= raw artist.bio %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,330 @@
+body {
+	color: #444444;
+}
+div {
+	-moz-border-radius:    .1em;
+	-webkit-border-radius: .1em;
+	border-radius:         .1em;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	border: 0px solid gray;
+}
+#divBody {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+.headerPointer {
+	position: fixed;
+	height: 10px;
+	width: 100%;
+	right: 0px;
+}
+#headerWrap {
+	position: fixed;
+	left: 0%;
+	width: 100%;
+	clear: both;
+}
+#headerNav {
+	height: 40px;
+	line-height: 2.2em;
+	background-color: rgba(255, 255, 255, 0.8);
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+}
+.pointerCellsWrap {
+	right: 0px;
+}
+
+.headerPointer>.home {
+	background-color: orange;
+}
+.headerPointer>.contact {
+	background-color: red;
+}
+.headerPointer>.projects {
+	background-color: yellow;
+}
+.headerPointer>.wallpapers {
+	background-color: yellow;
+}
+.headerPointer>.ramblings {
+	background-color: #3080C8;
+}
+.headerPointer>.programmings {
+	background-color: green;
+}
+.headerCellFixedWidth {
+	position: relative;
+	width: 15%;
+	height: 100%;
+	float: right;
+	text-align: center;
+	-moz-opacity: 1; 
+	filter:alpha(opacity=100); 
+	opacity: 1;
+	z-index: 100;
+}
+#headerNav>.headerCellFixedWidth:hover{
+	background-color: #eee;
+	cursor: pointer;
+	font-weight: bold;
+}
+.headerCellFixedWidth>a{
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.headerCellFixedWidth>a:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+#main{
+	position: relative;
+	top: 60px;
+}
+
+@font-face {
+	font-family: 'Maven Pro';
+	src: url('../fonts/MavenPro-Regular.ttf');	
+}
+@font-face {
+	font-family: 'Slackey';
+	src: url('../fonts/Slackey.ttf');	
+}
+.tag {
+	font-family: 'Consolas';
+}
+#meta-header>.currentTags {
+	clear: both;
+}
+.shareWrapper {
+	float: left;
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+}
+.shareWrapperNodeIndex {
+	float: left;
+}
+#share_tall {
+	padding:0.5em;
+	padding-left: 2em;
+	border-radius: .3em;
+	background-color: #f1f1f1;
+}
+.gplus {
+	float:inherit;
+	width: 95px;
+	margin: 2px;
+}
+.fblike {
+	float:inherit;
+	width: 95px;
+	margin: 2px;
+}
+.tweet {
+	float: inherit;
+	width: 110px;
+	margin: 2px;
+}
+.instapaper {
+  float: inherit;
+  width: 90px;
+  margin: 2px;
+}
+.addthis {
+	float: inherit;
+	width: 110px;
+	margin: 2px;
+}
+#meta-footer {
+	margin-top: 1em;
+}
+#meta-header {
+	margin-bottom: 2em;
+}
+.currentTags>a {
+	-moz-border-radius:    .2em;
+	-webkit-border-radius: .2em;
+	border-radius:         .2em;
+	background-color: rgba(192,192,192, 0.4);
+	padding: .2em;
+	color: gray;
+	text-decoration: none;
+}
+.currentTags>a:hover {
+	text-decoration: underline;
+}
+a {
+	color: #3080C8;
+}
+.prettyprint {
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+#AOMWrapper {
+	position: relative;
+	margin-left: 1em;
+	border: 1px solid #aaa;
+	border-radius: .8em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+	box-shadow: 0 0 2px #EEE;
+	-webkit-box-shadow: 0 0 2px #EEE;
+	background: rgba(64, 64, 64, 1);
+	color: white;
+}
+
+.AOMWrapperAll {
+	position: relative;
+	margin-left: 1em;
+	border: 1px solid #EEE;
+	border-radius: .3em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+	box-shadow: 0 0 2px #EEE;
+	-webkit-box-shadow: 0 0 2px #EEE;
+	background-color: #FAFAFA;
+}
+.AOMWrapperAll:hover {
+	box-shadow: 0 0 7px #ccc;
+	-webkit-box-shadow: 0 0 7px #ccc;
+}
+#artistView>div {
+	background-color: #FAFAFA;
+	color: black;
+}
+.AOMHome {
+	width: 200px;
+}
+.AOMOther {
+	width: 500px;
+}
+#AOMTitle>h2 {
+	font-family: 'Snippet', sans-serif;
+	text-align: center;
+	margin:0.2em;
+}
+#AOMWrapper:hover {
+	box-shadow: 0 0 7px #FAFAFA;
+	-webkit-box-shadow: 0 0 7px #FAFAFA;
+}
+#AOMSeparator {
+	width:100%;
+	height:2px;
+	background-color:black;
+}
+#artistNameText {
+	padding-top: 1em;
+	font-size: 1.5em;
+}
+#artistName {
+	margin-top: 1em;
+}
+#AOMIMO {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: 0.8em;
+}
+#AOMBuy {
+	clear: both;
+}
+#allArtists {
+	font-size:70%;
+	float:right;
+}
+#artistControl {
+	display: none;
+}
+.homeRichContent {
+	float:left;
+}
+#contentWrapper {
+	position: relative;
+	margin: 0 auto;
+	left: 2em;
+}
+
+#featured {
+	clear: both;
+	font-style: italic;
+	font-size: 0.6em;
+}
+.buyLink:hover {
+	font-size: 1.5em;
+}
+#createArtist {
+	float: left;
+}
+#createSong {
+	float: left;
+}
+#peepWrap {
+	position: fixed;
+	width: 300px;
+	height: 120px;
+	top: 80%;
+	right: 0%;
+	background-color: white;
+	font-size: 0.8em;
+	-moz-border-radius:    .2em;
+	-webkit-border-radius: .2em;
+	border-radius:         .2em;
+	display: none;
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	z-index: 101;
+}
+.peepLeft {
+	padding: 5px 0px 5px 5px;
+}
+#peepClose {
+	color: tomato;
+	border: 2px solid tomato;
+	width: 15px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+}
+#peepClose:hover {
+color: red;
+border: 2px solid red;	
+}
+#peepTitle {
+	font-family: 'Slackey';
+}
+.peepRight {
+	padding: 5px 0px 5px 5px;
+}
+#extnMessage {
+	position: fixed;
+	bottom: 0px;
+	left: 25%;
+	width: 50%;
+	text-align: center;
+	font-size: 0.9em;
+	background-color: lemonChiffon;
+	padding: 5px;
+	border-radius: 5px 5px 0 0;
+	color: #333333;
+	z-index: 100;
+}
+#extnMessage>a {
+	color: tomato;
+}
+#closeDeal {
+	margin-left: 5px;
+	cursor: pointer;
+}

@@ -1,0 +1,121 @@
+.wallpaperContainer {
+	float: left;
+	height: 150px;
+	margin: 1px;
+	position: relative;
+}
+.wallpaper {
+	height: 150px;
+	padding: 0px;
+	z-index: -1;
+}
+.wallpaper:hover {
+	box-shadow: 0 0 15px #555;
+}
+.caption {
+	position: absolute;
+	width: 100%;
+	bottom: 2px;
+	z-index: 20;
+	margin: 0 auto;
+	text-align: center;
+}
+
+* {margin:0;padding:0;}
+#galleryTable {
+	display: table;
+}
+#gallery {
+	list-style-type:none;
+	width:100%;
+	*margin: 0 -3px;
+	display:table-row;
+}
+
+#wallpaperSection {
+	border-right:1px dotted #bbb;
+	padding-left: 15px;
+	display: table-cell;
+	vertical-align: top;
+}
+
+#artistSection {
+	width: 600px;
+	display: table-cell;
+	vertical-align: top;
+}
+/*Gallery Index end*/
+
+/*Gallery Individual Begin*/
+
+#fbCommentsDiv {
+	position: relative;
+	margin-top:35%;
+	margin-left:60%;
+}
+#fb-comments-wrapper {
+	display: none;
+}
+#displayComments {
+	background-color: #3b5998;
+	border-radius: 0.1em;
+	color: white;
+	padding: 0.2em;
+	width: 80px;
+	text-align: center;
+	font-size: 0.9em;
+	border: 1px solid silver;
+	cursor: pointer;
+}
+#backToWallpapers {
+	background-color: rgba(128, 128, 128, 0.3);
+	border-radius: 0.2em 0.2em 0.2em 0.2em;
+	color: white;
+	padding: 0.5em;
+	text-decoration: none;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.arrows {
+	background-color: rgba(128, 128, 128, 0.3);
+	border-radius: 0.2em 0.2em 0.2em 0.2em;
+	color: white;
+	padding: 0.5em;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: 2em;
+	position:fixed;
+	top: 45%;
+	text-align: center;
+}
+.arrows:hover {
+	background-color: rgba(128, 128, 128, 0.8);
+}
+#prevWallpaper {
+	left: 5%;
+}
+#nextWallpaper {
+	left: 90%;
+}
+#wallpaperStory {
+	padding: 5px;
+	margin: 5px;	
+	font-size: 0.8em;
+	border-radius: 0.3em;
+	background: rgba(128, 128, 128, 0.3);
+	color: white;
+}
+#showWallpaperStory {
+	padding: 10px;
+	margin: 10px;
+	padding-top: 5px;
+	font-size: 1.5em;
+	border-radius: 2em;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0 10px #aaa;
+	cursor: pointer;
+	font-weight: bold;
+}
+#showWallpaperStory:hover {
+	background: rgba(255, 255, 255, 0.3);
+}

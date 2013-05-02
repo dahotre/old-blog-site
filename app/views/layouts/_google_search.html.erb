@@ -1,0 +1,14 @@
+<input type="search" id="gsearch" placeholder="Search dahotre.com" autocomplete="on"/>
+<script>
+$("#gsearch").keypress(function(e) {
+    if(e.keyCode == 13) {
+				window.location = "http://<%= request.host_with_port %>/search?q=" + $("#gsearch").val();
+    }
+});
+</script>
+<style>
+#gsearch {
+	width: 80%;
+	position: relative;
+}
+</style>

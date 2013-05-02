@@ -1,0 +1,23 @@
+#contactMain {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+	#logo {
+		float:left;	
+		margin-right: 1em;
+	}
+#contactTitle {
+	float:left;
+	margin-left: 1em;
+	font-family: 'Slackey';
+}
+#contactContent {
+	clear: both;
+	font-family: 'Maven Pro';
+}
+.eachsocial {
+	float:left;
+	max-width:20%;
+	margin-left: 1em;
+}
